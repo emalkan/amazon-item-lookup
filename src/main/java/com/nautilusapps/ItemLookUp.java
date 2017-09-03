@@ -49,7 +49,7 @@ public class ItemLookUp {
      */
     public ItemLookUp(String url) throws IOException {
 
-        this.documents = new ArrayList<>();
+        this.documents = new ArrayList<Document>();
 
         Document document = Jsoup.connect(url)
                 .userAgent(this.USER_AGENT)
@@ -71,7 +71,7 @@ public class ItemLookUp {
      */
     public ItemLookUp(List<String> urls, long interval) throws InterruptedException {
 
-        this.documents = new ArrayList<>();
+        this.documents = new ArrayList<Document>();
 
         try {
 
@@ -113,7 +113,7 @@ public class ItemLookUp {
      */
     public List<String> getFormattedPrices() {
 
-        List<String> formattedPrices = new ArrayList<>();
+        List<String> formattedPrices = new ArrayList<String>();
 
         for (Document document : documents) {
             formattedPrices.add(getFormattedPrice(document));
@@ -131,7 +131,7 @@ public class ItemLookUp {
      */
     public List<Float> getPriceValues() {
 
-        List<Float> priceValues = new ArrayList<>();
+        List<Float> priceValues = new ArrayList<Float>();
 
         for (Document document : documents) {
             priceValues.add(getPriceValue(document));
@@ -149,7 +149,7 @@ public class ItemLookUp {
      */
     public List<String> getCategories() {
 
-        List<String> categories = new ArrayList<>();
+        List<String> categories = new ArrayList<String>();
 
         for (Document document : documents) {
             categories.add(getCategory(document));
@@ -168,7 +168,7 @@ public class ItemLookUp {
      */
     public List<String> getAvailabilities() {
 
-        List<String> availabilities = new ArrayList<>();
+        List<String> availabilities = new ArrayList<String>();
 
         for (Document document : documents) {
             availabilities.add(getAvailability(document));
@@ -185,7 +185,7 @@ public class ItemLookUp {
      */
     public List<String> getTitles() {
 
-        List<String> titles = new ArrayList<>();
+        List<String> titles = new ArrayList<String>();
 
         for (Document document : documents) {
             titles.add(getTitle(document));
@@ -369,7 +369,7 @@ public class ItemLookUp {
         List<String> formattedPrices = getFormattedPrices();
         List<Float> priceValues = getPriceValues();
 
-        List<Item> items = new ArrayList<>();
+        List<Item> items = new ArrayList<Item>();
 
         for (int i = 0; i < documents.size(); i++) {
 
