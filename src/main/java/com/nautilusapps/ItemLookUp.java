@@ -403,7 +403,7 @@ public class ItemLookUp {
      */
     public Item getItem() {
 
-        if (documents != null || documents.get(0) == null) {
+        if (documents == null || documents.get(0) == null) {
             return null;
         }
 
