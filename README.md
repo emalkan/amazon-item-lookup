@@ -60,6 +60,43 @@ Use the following methods to get the data from an Item object:
 // String getAsinCode()
 ```
 
+## Importing in your Android Studio project
+
+Edit the <i>build.gradle (Project: your-project-name)</i> file in your Android Studio project, by adding this line:
+
+```
+maven { url 'https://jitpack.io' }
+```
+
+Add the line in the <i>allprojects > repositories</i> block. You should get something like this:
+
+```
+allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Edit the <i>build.gradle (Module: app)</i> file in your Android Studio project, by adding this line:
+
+```
+compile 'com.github.alessiovierti:amazon-item-lookup:-SNAPSHOT'
+```
+
+Add the line in the <i>dependencies</i> block. You should get something like this:
+
+```
+dependencies {
+    // [...]
+    compile 'com.github.alessiovierti:amazon-item-lookup:-SNAPSHOT'
+}
+```
+
+Finally, sync the project and rebuild it.<br>
+If you get any errors, try cleaning the project (<i>Build > Clean Project</i>).
+
 ## Built with
 
 * [jsoup](https://jsoup.org) - The library used
