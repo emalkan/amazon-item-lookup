@@ -10,8 +10,8 @@ You can get data for a single product or for a list of products.<br>
 Each item is identified by its url.
 
 ```
-// Use ItemLookUp(String) to get data for a single product.
-// Use ItemLookUp(List<String>) to get data for a list of products.
+// Use ItemLookUp(String url) to get data for a single product.
+// Use ItemLookUp(List<String> urls) to get data for a list of products.
 ```
 
 The constructor loads the source code from each url and then saves it.<br>
@@ -23,7 +23,7 @@ Note that connections shouldn't be too frequent. The second contructor automatic
 connection. If you want, you can change the amount of time to wait, by calling the following constructor: 
 
 ```
-// Use ItemLookUp(List<String>, long) to get data for a list of products<br> 
+// Use ItemLookUp(List<String> urls, long millis) to get data for a list of products<br> 
 // and to wait the desired amount of time (in millis) between each connection.
 ```
 
@@ -111,5 +111,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Know limitations
 
-* The ItemLookUp class should work for the american and italian store. The currencies supported are euros and dollars, so you 
-shouldn't try to get currency data from other stores. All the other data should be scraped fine.
+* The ItemLookUp class should work fine for the american and italian store. Currently the supported currencies are euros and 
+dollars.
